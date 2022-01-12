@@ -2,6 +2,6 @@
 
 # Installation 
 
-./install.sh 
+sudo bash install.sh 
 
 ./subDir
