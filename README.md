@@ -1,6 +1,6 @@
 # subDir
 
-#Installation 
+# Installation 
 
 ./install.sh 
 ./subDir
