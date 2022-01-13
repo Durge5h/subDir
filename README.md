@@ -4,4 +4,4 @@
 
 sudo bash install.sh 
 
-./subDir <<full-domain>>
+./subDir www.example.com 
