@@ -1,0 +1,16 @@
+#!/bin/bash
+
+source ./input_domain.lib
+source ./subdomain_enumeration.lib
+source ./dirsearch.lib
+
+export DOMAIN=$1
+if [[ $DOMAIN == "" ]]
+then
+	printf "\n Usage : ./subDir <full-domain>\n\n"
+else
+	input_Domain
+	subdomain_Enumeration 
+	dirsearch_Fuzzing
+fi
+

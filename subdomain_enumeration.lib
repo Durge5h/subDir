@@ -1,0 +1,31 @@
+#!/bin/bash
+
+subdomain_Enumeration()
+{
+cd ${RUNNING_PATH}
+mkdir subdomains
+cd subdomains
+
+sleep 2
+
+printf "\nStarting Subdomain Enumeration"
+
+
+printf "\nRunning Finddomain\n"
+findomain -t $DOMAIN -u finddomain.txt
+cat finddomain.txt | tee -a allsubs1.txt
+#wc -l allsubs1.txt | awk '{print $1 " subdomains founded by Finddomain"}'
+
+printf "\n\n"
+
+printf "\nSorting Colleted Subdomains\n"
+cat allsubs*.txt > subdomains.txt
+clear
+wc -l subdomains.txt | awk '{print $1 " subdomains are founded till now"}'
+
+printf "\n\n"
+
+rm allsub* && rm finddomain.txt 
+
+printf "\nSubdomain Enumeration Completed \n"
+}

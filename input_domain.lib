@@ -1,0 +1,31 @@
+#!/bin/bash
+
+input_Domain()
+{
+
+printf "\n\n"           
+export DOMAIN=$DOMAIN
+validate="$(python3 \
+  domain_validator.py)"
+
+if [ $validate -eq 1 ]
+then 
+
+  printf "Domain provide to us: $DOMAIN\n" 
+  TODAY=`date '+%d/%b/%y %r'`
+  sleep 2
+  printf "Scanning is started at ${TODAY}" 
+  printf "Creating directory ${DOMAIN}_recon\n"
+
+  Directory="${DOMAIN}_recon"
+  mkdir $Directory
+  cd $Directory
+  RUNNING_PATH=`pwd`
+  
+else 
+  printf "\nDomain provided is not correct.... Please enter valid domain"
+  printf "\nExample : target.com\n"
+  exit 1
+fi
+
+}
